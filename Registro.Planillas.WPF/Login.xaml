@@ -1,14 +1,34 @@
-﻿<Page x:Class="Registro.Planillas.WPF.Login"
+﻿<Controls:MetroWindow x:Class="Registro.Planillas.WPF.Login"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Registro.Planillas.WPF"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Login">
-
+      GlowBrush="Aqua"
+      xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      Title="Login" Height="310.816" WindowStartupLocation="CenterScreen" Width="680.127">
+    <Controls:MetroWindow.Background>
+        <ImageBrush ImageSource="img/FondoLogin.jpg"/>
+    </Controls:MetroWindow.Background>
     <Grid>
-        
+        <TextBox FontSize="18"  Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Usuario"  HorizontalAlignment="Left" Height="33" Margin="254,95,0,0" TextWrapping="Wrap" Name="txtUsuario" VerticalAlignment="Top" Width="284" Foreground="White" Background="{x:Null}" BorderBrush="#FFFBFBFB" SelectionBrush="White" FontWeight="Light"/>
+        <PasswordBox FontFamily="metro" FontSize="18" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Contraseña"    HorizontalAlignment="Left" Height="28" Margin="254,133,0,0"  Name="txtPass" VerticalAlignment="Top" Width="284" Background="{x:Null}" Foreground="White" SelectionBrush="White" BorderBrush="#FFFBFBFB" FontWeight="Light"/>
+        <TextBlock x:Name="txtmensaje1"  Foreground="LightBlue" HorizontalAlignment="Left" Margin="242,118,0,0" FontSize="36" TextWrapping="Wrap" Text="Iniciando..." VerticalAlignment="Top" Height="60" Width="256" FontWeight="Light" Visibility="Hidden" />
+        <Image x:Name="image" HorizontalAlignment="Left" Height="179" Margin="23,56,0,0" VerticalAlignment="Top" Width="168" Source="img/User-Lock.png"/>
+        <Button Background="Azure" x:Name="btnAceptar" Opacity="0.9" BorderBrush="Transparent" Content="Iniciar" HorizontalAlignment="Left" Margin="254,166,0,0" VerticalAlignment="Top" Width="104" Height="39" Foreground="Blue" FontSize="20" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Animated" FontWeight="Light" Click="btnAceptar_Click"/>
+
+        <!--<controls:MetroProgressBar IsIndeterminate="True" Margin="3,184,5,83" Visibility="Hidden" x:Name="BarraProgreso" Height="18" Foreground="White" EllipseOffset="4" EllipseDiameter="5" SmallChange="0" FontSize="18"/>-->
+        <Controls:MetroProgressBar IsIndeterminate="True" Margin="3,184,5,83" Visibility="Hidden" x:Name="BarraProgreso" Height="18" Foreground="White" EllipseOffset="4" EllipseDiameter="5" SmallChange="0" FontSize="18"/>
+        <!--<controls:ProgressRing  Name="progres" IsActive="False" Margin="62,88,492,101" Height="95" Width="118" Foreground="White"/>-->
+        <Controls:ProgressRing Name="progres" IsActive="False" Margin="62,88,492,101" Height="95" Width="118" Foreground="White"/>
+        <Image HorizontalAlignment="Left" Height="222" Margin="-84,-40,0,0" VerticalAlignment="Top" Width="127" Source="img/Location-Pin.png" Stretch="None" ClipToBounds="True" AllowDrop="True"/>
+        <Image HorizontalAlignment="Left" Height="222" Margin="514,69,0,-11" VerticalAlignment="Top" Width="127" Source="img/Location2.png" Stretch="None" ClipToBounds="True" AllowDrop="True" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="179.869"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
     </Grid>
-</Page>
+</Controls:MetroWindow>
