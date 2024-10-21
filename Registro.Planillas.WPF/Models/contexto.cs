@@ -15,5 +15,7 @@ namespace Registro.Planillas.WPF.Models
 
         }
         public DbSet<usuarios> usuarios { get; set; }
+        public DbSet<Empleado> empleados { get; set; }
+        public DbSet<Cargo> cargos { get; set; }
     }
 }

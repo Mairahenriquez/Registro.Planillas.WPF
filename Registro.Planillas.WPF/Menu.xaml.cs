@@ -21,6 +21,8 @@ namespace Registro.Planillas.WPF
     /// </summary>
     public partial class Menu : MetroWindow
     {
+        Empleados _empleadosVentana;
+        
         public Menu()
         {
             InitializeComponent();
@@ -70,7 +72,15 @@ namespace Registro.Planillas.WPF
 
         private void btnEmpleados_Click(object sender, RoutedEventArgs e)
         {
-
+            if (_empleadosVentana == null || !_empleadosVentana.IsLoaded)
+            {
+                _empleadosVentana = new Empleados();
+                _empleadosVentana.Show();
+            }
+            else
+            {
+                _empleadosVentana.Focus();
+            }
         }
 
         private void btnEmpleados_MouseEnter(object sender, MouseEventArgs e)

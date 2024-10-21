@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cargo.cs" />
+    <Compile Include="Empleado.cs" />
     <Compile Include="usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="usuarios_roles.cs" />
