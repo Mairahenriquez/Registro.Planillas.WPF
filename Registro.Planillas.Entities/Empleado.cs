@@ -16,16 +16,17 @@ namespace Registro.Planillas.Entities
         public int empresa_id { get; set;}
         public int cargo_id { get; set; }
         public string dui { get; set;}
+        public string isss { get; set; }
         public string nombres { get; set;}
         public string apellidos { get; set; }
-        public float salario_base { get; set; }
+        public double salario_base { get; set; }
         public string residencia { get; set; }
         public string telefono { get; set; }
         public DateTime fecha_contrato { get; set; }
-        public float descuento_afp { get; set; }
-        public float descuento_isss { get; set; }
+        public double descuento_afp { get; set; }
+        public double descuento_isss { get; set; }
         public int horas_laboradas { get; set; }
         public int años_laborados { get; set; }
-        public float descuento_renta { get; set; }
+        public double descuento_renta { get; set; }
     }
 }

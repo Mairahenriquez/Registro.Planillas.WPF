@@ -107,7 +107,7 @@ namespace Registro.Planillas.WPF
                 cargosTexto.Add(item.cargo_id + "- " + item.nombre);
             }
             cargoCmbBox.ItemsSource = cargosTexto;
-
+            Application.Current.Properties["cargosTexto"] = cargosTexto;
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)

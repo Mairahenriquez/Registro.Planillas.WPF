@@ -24,7 +24,7 @@ namespace Registro.Planillas.WPF
     public partial class ListaEmpleados : Page
     {
         contexto db = new contexto();
-        Empleado empleado = new Empleado();
+
         public ListaEmpleados()
         {
             InitializeComponent();
@@ -32,13 +32,19 @@ namespace Registro.Planillas.WPF
 
         private void cargarTabla(object sender, RoutedEventArgs e)
         {
-            var empleados = db.Set<Empleado>().Select(emp => new { emp.empleado_id, emp.dui, emp.nombres, emp.apellidos, emp.residencia, emp.telefono, emp.fecha_contrato});
+            var empleados = db.Set<Empleado>().Select(emp => new { emp.empleado_id, emp.dui, emp.nombres, emp.apellidos, emp.residencia, emp.telefono, emp.fecha_contrato });
             empleadosDataGrid.ItemsSource = empleados.ToList();
         }
 
         private void agregarEmpleado(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Uri("AgregarEmpleado.xaml", UriKind.Relative));
+        }
+
+        private void editarBtn_Click(object sender, RoutedEventArgs e)
+        { 
+                this.NavigationService.Navigate(new Uri("EditarEmpleado.xaml", UriKind.Relative));
+
         }
     }
 }
