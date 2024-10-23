@@ -27,12 +27,20 @@ namespace Registro.Planillas.WPF
     /// <summary>
     /// Lógica de interacción para AgregarEmpleado.xaml
     /// </summary>
-    public partial class AgregarEmpleado : Page
+    public partial class AgregarEmpleado : Window
     {
         contexto contexto = new contexto();
+        Window ventanaAnterior;
+
         public AgregarEmpleado()
         {
             InitializeComponent();
+        }
+
+        public AgregarEmpleado(Window ventanaAnterior)
+        {
+            InitializeComponent();
+            this.ventanaAnterior = ventanaAnterior;
         }
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
@@ -47,6 +55,7 @@ namespace Registro.Planillas.WPF
                 Regex regex = new Regex("\\d+(?=-)", RegexOptions.IgnoreCase);//obtiene el numero de cargo seleccionado
                 cargo = regex.Match(cargo).Value;
                 float salario = float.Parse(salarioInput.Value.ToString());
+                string isss = isssTxtbox.Text;
                 string residencia = residenciaTxtbox.Text;
                 string telefono = telefonoTxtbox.Text;
 
@@ -54,6 +63,7 @@ namespace Registro.Planillas.WPF
                 empleado.nombres = nombres;
                 empleado.apellidos = apellidos;
                 empleado.dui = dui;
+                empleado.isss = isss;
                 empleado.cargo_id = int.Parse(cargo);
                 empleado.salario_base = salario;
                 empleado.residencia = residencia;
@@ -70,6 +80,8 @@ namespace Registro.Planillas.WPF
                     MessageBoxResult result;
 
                     result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+                    btnGuardar.IsEnabled = false;
+                    btnCancelar.Content = "CERRAR";
 
                 }
                 else//no se guardó nada en la bd
@@ -112,7 +124,15 @@ namespace Registro.Planillas.WPF
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            this.Close();
+            if (ventanaAnterior != null)
+                ventanaAnterior.Show();
+        }
+
+        private void ventana_Closed(object sender, EventArgs e)
+        {
+            if (ventanaAnterior != null)
+                ventanaAnterior.Show();
         }
     }
 }

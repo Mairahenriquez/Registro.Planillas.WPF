@@ -91,10 +91,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ListaEmpleados.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -115,9 +111,6 @@
     </Compile>
     <Compile Include="Empleados.xaml.cs">
       <DependentUpon>Empleados.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ListaEmpleados.xaml.cs">
-      <DependentUpon>ListaEmpleados.xaml</DependentUpon>
     </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>

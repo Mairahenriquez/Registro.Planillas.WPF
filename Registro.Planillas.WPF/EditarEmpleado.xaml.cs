@@ -23,14 +23,21 @@ namespace Registro.Planillas.WPF
     /// <summary>
     /// Lógica de interacción para EditarEmpleado.xaml
     /// </summary>
-    public partial class EditarEmpleado : Page
+    public partial class EditarEmpleado : Window
     {
         contexto contexto = new contexto();
         int tipoBusqueda = 0;
+        Window ventanaAnterior;
 
         public EditarEmpleado()
         {
             InitializeComponent();
+        }
+
+        public EditarEmpleado(Window ventanaAnterior)
+        {
+            InitializeComponent();
+            this.ventanaAnterior = ventanaAnterior;
         }
 
         public void page_Loaded(object sender, RoutedEventArgs e)
@@ -41,7 +48,7 @@ namespace Registro.Planillas.WPF
                 duiTxtbox.Text = empleado.dui;
                 nombresTxtBox.Text = empleado.nombres;
                 apellidosTxtbox.Text = empleado.apellidos;
-                //issTextBox.Text ;
+                issTextBox.Text = empleado.isss;
                 salarioInput.Value = empleado.salario_base;
                 residenciaTxtbox.Text = empleado.residencia;
                 telefonoTxtbox.Text = empleado.telefono;
@@ -62,7 +69,9 @@ namespace Registro.Planillas.WPF
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            this.Close();
+            if (ventanaAnterior != null)
+                ventanaAnterior.Show();
         }
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
