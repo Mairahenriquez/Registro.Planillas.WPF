@@ -2,6 +2,7 @@
 using Registro.Planillas.WPF.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -31,8 +32,29 @@ namespace Registro.Planillas.WPF
 
         private void cargarTabla()
         {
-            var empleados = db.Set<Empleado>().Select(emp => new { emp.empleado_id, emp.dui, emp.isss, emp.nombres, emp.apellidos, emp.salario_base, emp.residencia, emp.telefono, emp.fecha_contrato });
-            empleadosDataGrid.ItemsSource = empleados.ToList();
+            //var empleados = db.Set<Empleado>().Select(emp => new { emp.empleado_id, emp.dui, emp.isss, emp.nombres, emp.apellidos, emp.salario_base, emp.residencia, emp.telefono, emp.fecha_contrato });
+            try
+            {
+                var resultado = (from empleados in db.empleados
+                                 join cargos in db.cargos
+                                 on empleados.cargo_id equals cargos.cargo_id
+                                 select new
+                                 {
+                                     ID = empleados.empresa_id,
+                                     Nombres = empleados.nombres,
+                                     Apellidos = empleados.apellidos,
+                                     Cargo = cargos.nombre,
+                                     Salario = empleados.salario_base,
+                                     Telefono = empleados.telefono,
+                                     Residencia = empleados.residencia
+                                 });
+                empleadosDataGrid.ItemsSource = resultado.ToList();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.Close();
+            }
+            
         }
         private void empleadosDataGrid_Loaded(object sender, RoutedEventArgs e)
         {
