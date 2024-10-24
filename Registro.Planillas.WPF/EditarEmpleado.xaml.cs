@@ -69,9 +69,21 @@ namespace Registro.Planillas.WPF
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             if (ventanaAnterior != null)
-                ventanaAnterior.Show();
+            {
+                string messageBoxText = "¿Seguro que desea cerrar esta ventana? Todos los datos ingresados no se guardarán";
+                string caption = "Mensaje de confirmación";
+                MessageBoxButton button = MessageBoxButton.YesNo;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                MessageBoxResult result;
+
+                result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+                if (result == MessageBoxResult.Yes)
+                {
+                    this.Close();
+                    ventanaAnterior.Show();
+                }
+            }
         }
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)

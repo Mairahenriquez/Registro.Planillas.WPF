@@ -31,7 +31,7 @@ namespace Registro.Planillas.WPF
 
         private void cargarTabla()
         {
-            var empleados = db.Set<Empleado>().Select(emp => new { emp.empleado_id, emp.dui, emp.isss, emp.nombres, emp.apellidos, emp.residencia, emp.telefono, emp.fecha_contrato });
+            var empleados = db.Set<Empleado>().Select(emp => new { emp.empleado_id, emp.dui, emp.isss, emp.nombres, emp.apellidos, emp.salario_base, emp.residencia, emp.telefono, emp.fecha_contrato });
             empleadosDataGrid.ItemsSource = empleados.ToList();
         }
         private void empleadosDataGrid_Loaded(object sender, RoutedEventArgs e)

@@ -80,8 +80,13 @@ namespace Registro.Planillas.WPF
                     MessageBoxResult result;
 
                     result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
-                    btnGuardar.IsEnabled = false;
-                    btnCancelar.Content = "CERRAR";
+                    duiTxtbox.Text = "";
+                    nombresTxtBox.Text = "";
+                    apellidosTxtbox.Text = "";
+                    isssTxtbox.Text = "";
+                    salarioInput.Value = 0.00;
+                    residenciaTxtbox.Text = "";
+                    telefonoTxtbox.Text = ""; ;
 
                 }
                 else//no se guardó nada en la bd
@@ -124,9 +129,21 @@ namespace Registro.Planillas.WPF
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             if (ventanaAnterior != null)
-                ventanaAnterior.Show();
+            {
+                string messageBoxText = "¿Seguro que desea cerrar esta ventana? Todos los datos ingresados no se guardarán";
+                string caption = "Mensaje de confirmación";
+                MessageBoxButton button = MessageBoxButton.YesNo;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                MessageBoxResult result;
+
+                result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+                if (result == MessageBoxResult.Yes)
+                {
+                    this.Close();
+                    ventanaAnterior.Show();
+                }
+            }
         }
 
         private void ventana_Closed(object sender, EventArgs e)
