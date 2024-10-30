@@ -1,0 +1,45 @@
+﻿<Window x:Class="Registro.Planillas.WPF.DatosFamiliares"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Registro.Planillas.WPF"
+        mc:Ignorable="d"
+        Title="DatosFamiliares" Height="650" Width="1080" Background="#FFECECEC" Activated="window_Activated">
+    <Grid>
+        <Grid Background="White" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="85"/>
+                <RowDefinition Height="400" ScrollViewer.CanContentScroll="True"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="LISTADO DE fAMILIARES" Grid.Row="0" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontSize="20" FontWeight="Bold" Background="#FFAE5AFF" Padding="10" Foreground="#ffff"/>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Height="50" Margin="5,15,0,0" VerticalAlignment="Top">
+                <Button Content="Agregar" Width="120" Margin="0,0,20,0" Background="#FF219E1A" Foreground="White" BorderBrush="{x:Null}" FontSize="14" Click="agregarBtn_Click"/>
+                <Button x:Name="editarBtn" Content="Editar" Width="120" Margin="0,0,20,0" Background="#FFE8AA16" Foreground="White" BorderBrush="{x:Null}" FontSize="14" Click="editarBtn_Click"/>
+                <Button x:Name="eliminarBtn" Content="Eliminar" Width="120" Background="#FFE10C0C" Foreground="White" BorderBrush="{x:Null}" FontSize="14" Click="eliminarBtn_Click"/>
+            </StackPanel>
+            <DataGrid x:Name="familiaresDataGrid" VerticalAlignment="Top"
+              Grid.Row="2" 
+              AutoGenerateColumns="True" 
+              Loaded="empleadosDataGrid_Loaded" 
+              BorderThickness="1,1,1,1" 
+              Background="{x:Null}" 
+              GridLinesVisibility="Horizontal" 
+              HorizontalGridLinesBrush="#FFA5A5A5" 
+              SelectionMode="Single" 
+              SelectionUnit="FullRow" 
+              FontSize="14" 
+              BorderBrush="{x:Null}" 
+              MinRowHeight="45" 
+              RowHeaderWidth="45" 
+              RowBackground="White" 
+              IsReadOnly="True"
+              VerticalScrollBarVisibility="Visible" 
+              HorizontalScrollBarVisibility="Visible"
+              Height="350"  
+              Margin="0,20,0,0"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -83,7 +83,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AgregarFamiliar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DatosFamiliares.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="EditarEmpleado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditarFamiliar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -102,12 +114,21 @@
     <Compile Include="AgregarEmpleado.xaml.cs">
       <DependentUpon>AgregarEmpleado.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AgregarFamiliar.xaml.cs">
+      <DependentUpon>AgregarFamiliar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DatosFamiliares.xaml.cs">
+      <DependentUpon>DatosFamiliares.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EditarEmpleado.xaml.cs">
       <DependentUpon>EditarEmpleado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditarFamiliar.xaml.cs">
+      <DependentUpon>EditarFamiliar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Empleados.xaml.cs">
       <DependentUpon>Empleados.xaml</DependentUpon>
