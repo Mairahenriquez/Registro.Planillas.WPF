@@ -12,10 +12,10 @@ namespace Registro.Planillas.Entities
     public class DescuentoSalarial
     {
         [Key]
-        int descuento_id {  get; set; }
-        DateTime fecha { get; set; }
-        double monto {  get; set; }
-        string descripcion {  get; set; }
-        int empleado_id { get; set; }
+        public int descuento_id {  get; set; }
+        public DateTime fecha { get; set; }
+        public double monto {  get; set; }
+        public string descripcion {  get; set; }
+        public int empleado_id { get; set; }
     }
 }

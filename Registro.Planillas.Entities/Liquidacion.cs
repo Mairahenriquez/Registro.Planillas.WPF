@@ -12,9 +12,9 @@ namespace Registro.Planillas.Entities
     public class Liquidacion
     {
         [Key]
-        int liquidacion_id { get; set; }
-        int empleado_id { get; set; }
-        DateTime fecha {  get; set; }
-        double indemnizacion { get; set; }
+        public int liquidacion_id { get; set; }
+        public int empleado_id { get; set; }
+        public DateTime fecha {  get; set; }
+        public double indemnizacion { get; set; }
     }
 }

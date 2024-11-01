@@ -12,10 +12,10 @@ namespace Registro.Planillas.Entities
     public class Prestacion
     {
         [Key]
-        int prestacion_id {  get; set; }
-        int empleado_id { get; set; }
-        string descripcion {  get; set; }
-        double monto { get; set; }
-        DateTime fecha { get; set; }
+        public int prestacion_id {  get; set; }
+        public int empleado_id { get; set; }
+        public string descripcion {  get; set; }
+        public double monto { get; set; }
+        public DateTime fecha { get; set; }
     }
 }

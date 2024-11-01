@@ -12,10 +12,10 @@ namespace Registro.Planillas.Entities
     public class Empresa
     {
         [Key]
-        int empresa_id { get; set; }
-        string nombre {  get; set; }
-        string telefono { get; set; }
-        string documento { get; set; }
-        string numero_patronal { get; set; }
+        public int empresa_id { get; set; }
+        public string nombre {  get; set; }
+        public string telefono { get; set; }
+        public string documento { get; set; }
+        public string numero_patronal { get; set; }
     }
 }

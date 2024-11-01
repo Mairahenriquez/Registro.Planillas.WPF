@@ -12,15 +12,15 @@ namespace Registro.Planillas.Entities
     public class Planilla
     {
         [Key]
-        int planilla_id { get; set; }
-        DateTime fecha_planilla {  get; set; }
-        double total_salarios { get; set; }
-        double total_afp { get; set; }
-        double total_isss { get; set; }
-        double descuento_afp { get; set; }
-        double descuento_isss { get; set; }
-        double renta {  get; set; }
-        int dias_laborados { get; set; }
-        int horas_laboradas { get; set; }
+        public int planilla_id { get; set; }
+        public DateTime fecha_planilla {  get; set; }
+        public double total_salarios { get; set; }
+        public double total_afp { get; set; }
+        public double total_isss { get; set; }
+        public double descuento_afp { get; set; }
+        public double descuento_isss { get; set; }
+        public double renta {  get; set; }
+        public int dias_laborados { get; set; }
+        public int horas_laboradas { get; set; }
     }
 }

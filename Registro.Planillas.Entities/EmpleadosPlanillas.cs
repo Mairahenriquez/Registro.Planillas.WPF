@@ -12,10 +12,10 @@ namespace Registro.Planillas.Entities
     public class EmpleadosPlanillas
     {
         [Key]
-        int pk_codigo {  get; set; }
-        double aporte_afp { get; set; }
-        double aporte_isss {  get; set; }
-        int planilla_id {  get; set; }
-        int empleado_id { get; set; }
+        public int pk_codigo {  get; set; }
+        public double aporte_afp { get; set; }
+        public double aporte_isss {  get; set; }
+        public int planilla_id {  get; set; }
+        public int empleado_id { get; set; }
     }
 }
