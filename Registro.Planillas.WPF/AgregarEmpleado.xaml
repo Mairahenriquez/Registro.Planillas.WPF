@@ -1,0 +1,48 @@
+﻿<Window
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Registro.Planillas.WPF"
+      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="Registro.Planillas.WPF.AgregarEmpleado"
+      mc:Ignorable="d" 
+      d:DesignHeight="420" d:DesignWidth="650" Height="420" Width="800" ResizeMode="NoResize"
+      Title="AgregarEmpleado"
+      Closed="ventana_Closed"
+      Background="#FFECECEC">
+
+    <StackPanel Background="White" Margin="10">
+        <Label Content="AGREGAR EMPLEADO" Padding="10" Background="#FF5A73FF" Foreground="#ffff" Height="60" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" FontSize="18" FontWeight="Bold"/>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" Grid.ColumnSpan="1" HorizontalAlignment="Stretch">
+                <Label Content="DUI: " FontSize="14"/>
+                <TextBox Name="duiTxtbox" HorizontalAlignment="Stretch" BorderBrush="#FF5B5B5B" mah:ControlsHelper.FocusBorderThickness="1,1,1,1" mah:ControlsHelper.FocusBorderBrush="#FF4872FA" mah:TextBoxHelper.Watermark="000000000" MaxLength="9"/>
+                <Label Content="Nombres: " FontSize="14"/>
+                <TextBox Name="nombresTxtBox" HorizontalAlignment="Stretch" BorderBrush="#FF5B5B5B" mah:ControlsHelper.FocusBorderThickness="1,1,1,1" mah:ControlsHelper.FocusBorderBrush="#FF4872FA"/>
+                <Label Content="Apellidos: " FontSize="14"/>
+                <TextBox Name="apellidosTxtbox" HorizontalAlignment="Stretch" BorderBrush="#FF5B5B5B" mah:ControlsHelper.FocusBorderThickness="1,1,1,1" mah:ControlsHelper.FocusBorderBrush="#FF4872FA"/>
+                <Label Content="Cargo: " FontSize="14"/>
+                <ComboBox Name="cargoCmbBox" HorizontalAlignment="Stretch" Loaded="cmbBox_Loaded" Background="#FFF8F8F8" SelectedIndex="0" BorderBrush="#FF5B5B5B" mah:ControlsHelper.FocusBorderThickness="1,1,1,1" mah:ControlsHelper.FocusBorderBrush="#FF4872FA"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Grid.Column="3">
+                <Label Content="Número de ISSS: " FontSize="14"/>
+                <TextBox Name="isssTxtbox" HorizontalAlignment="Stretch" BorderBrush="#FF5B5B5B" MaxLength="9" mah:ControlsHelper.FocusBorderThickness="1,1,1,1" mah:ControlsHelper.FocusBorderBrush="#FF4872FA"/>
+                <Label Content="Residencia" FontSize="14"/>
+                <TextBox Name="residenciaTxtbox" HorizontalAlignment="Stretch" BorderBrush="#FF5B5B5B" mah:ControlsHelper.FocusBorderThickness="1,1,1,1" mah:ControlsHelper.FocusBorderBrush="#FF4872FA"/>
+                <Label Content="Número de teléfono: " FontSize="14"/>
+                <TextBox Name="telefonoTxtbox" HorizontalAlignment="Stretch" BorderBrush="#FF5B5B5B" mah:ControlsHelper.FocusBorderThickness="1,1,1,1" mah:ControlsHelper.FocusBorderBrush="#FF4872FA" MaxLength="8"/>
+                <Label Content="Salario (USD):" FontSize="14"/>
+                <mah:NumericUpDown Name="salarioInput" Minimum="0" Value="365.00" TextAlignment="Left" StringFormat=".00" FontSize="14" BorderBrush="#FF5B5B5B" SwitchUpDownButtons="True" NumericInputMode="Decimal" mah:ControlsHelper.FocusBorderThickness="1,1,1,1" mah:ControlsHelper.FocusBorderBrush="#FF4872FA"/>
+            </StackPanel>
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 15 0 0">
+            <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Center" FontSize="14" Padding="10" Margin="5" Background="Green" Foreground="White" Click="btnGuardar_Click" BorderBrush="{x:Null}"/>
+            <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Center" FontSize="14" Padding="10" Margin="5" Background="Red" Foreground="White" Click="btnCancelar_Click" BorderBrush="{x:Null}"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
